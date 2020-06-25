@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Deep Learning in Action</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/app.css" rel="stylesheet">
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</head>
+
+
+<body>
+    <div class="overlay">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+    <h2> Deep Learning in Action </h2>
+    <div class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-10">
+            <center>
+                <h3>Paraphase generation using T5 model</h3>
+            </center>
+            <div class="form-row ">
+                <div class="form-group col-md-3">
+                    <br>
+                    <label for="max_sentences" id="label_max_sentences">sentences: 10</label>
+                    <input type="range" class="custom-range" min="1" max="20" value="10" step="1" id="max_sentences">
+                </div>
+                <div class="form-group col-md-3">
+                    <br>
+                    <label for="top_p" id="label_top_p">top_p: 0.98</label>
+                    <input type="range" class="custom-range" min="0" max="1" value="0.98" step="0.01" id="top_p">
+                </div>
+                <div class="form-group col-md-3">
+                    <br>
+                    <label for="max_len" id="label_max_len">max len: 128</label>
+                    <input type="range" class="custom-range" min="32" max="512" value="128" step="16" id="max_len">
+                </div>
+                <div class="form-group col-md-3">
+                    <br>
+                    <label for="early_stop" id="label_early_stop">Early Stop</label>
+                    <select name="early_stop" class="form-control" id="early_stop">
+                        <option value="1" checked>True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row align-items-end">
+                <div class="col-md-10">
+                    <h5>Type a query</h5>
+                    <textarea class="form-control txt_input" id="input_text" rows="1"></textarea>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-success btn-lg btn-block" id="btn_generate">Generate</button>
+                </div>
+            </div>
+
+            <br>
+            <h5> T5 Paraphrase generations </h5>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <textarea class="form-control txt_response" id="text_t5" readonly></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</body>
+
+</html>
